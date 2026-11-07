@@ -6,7 +6,7 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
-APPIMAGE_PATH="$PROJECT_ROOT/../Vortex-linux-x86_64.AppImage"
+APPIMAGE_PATH="${APPIMAGE_PATH:-$PROJECT_ROOT/../Vortex-linux-x86_64.AppImage}"
 EXTRACT_DIR="$PROJECT_ROOT/../extracted"
 ASSETS_DIR="$PROJECT_ROOT/app/src/main/assets"
 
@@ -15,8 +15,9 @@ echo "Extracting Vortex AppImage"
 echo "========================================"
 
 if [ ! -f "$APPIMAGE_PATH" ]; then
-    echo "ERROR: AppImage not found at $APPIMAGE_PATH"
-    exit 1
+    echo "WARNING: AppImage not found at $APPIMAGE_PATH"
+    echo "Skipping extraction. Using existing assets."
+    exit 0
 fi
 
 # Find squashfs offset
