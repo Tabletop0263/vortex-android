@@ -35,6 +35,12 @@ jobs:
         with:
           targets: aarch64-linux-android
       
+      - name: Unset conflicting Android env vars
+        run: |
+          unset ANDROID_HOME
+          unset ANDROID_SDK_ROOT
+        shell: bash
+      
       - name: Install Android SDK
         run: |
           mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
@@ -45,6 +51,9 @@ jobs:
           export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools
           yes | sdkmanager --licenses
           sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0" "ndk;26.1.10909125"
+        env:
+          ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
+          ANDROID_NDK_HOME: ${{ github.workspace }}/android-sdk/ndk/26.1.10909125
       
       - name: Cache Gradle
         uses: actions/cache@v4
@@ -86,6 +95,9 @@ jobs:
           ./scripts/build_rust.sh
         working-directory: ${{ github.workspace }}
         continue-on-error: true
+        env:
+          ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
+          ANDROID_NDK_HOME: ${{ github.workspace }}/android-sdk/ndk/26.1.10909125
       
       - name: Bundle Libraries
         run: |
@@ -98,14 +110,22 @@ jobs:
       - name: Build Debug APK
         run: |
           export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools
+          unset ANDROID_HOME
           ./gradlew assembleDebug --no-daemon
         working-directory: ${{ github.workspace }}
+        env:
+          ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
+          ANDROID_NDK_HOME: ${{ github.workspace }}/android-sdk/ndk/26.1.10909125
       
       - name: Build Release APK
         run: |
           export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools
+          unset ANDROID_HOME
           ./gradlew assembleRelease --no-daemon
         working-directory: ${{ github.workspace }}
+        env:
+          ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
+          ANDROID_NDK_HOME: ${{ github.workspace }}/android-sdk/ndk/26.1.10909125
       
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
