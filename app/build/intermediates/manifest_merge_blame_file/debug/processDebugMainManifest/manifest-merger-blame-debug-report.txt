@@ -1,0 +1,85 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.playvortex.vortex"
+4    android:versionCode="1"
+5    android:versionName="0.9.6" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/root/vortex-android/app/src/main/AndroidManifest.xml:5:5-67
+11-->/root/vortex-android/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/root/vortex-android/app/src/main/AndroidManifest.xml:6:5-79
+12-->/root/vortex-android/app/src/main/AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.WAKE_LOCK" />
+13-->/root/vortex-android/app/src/main/AndroidManifest.xml:7:5-68
+13-->/root/vortex-android/app/src/main/AndroidManifest.xml:7:22-65
+14
+15    <uses-feature
+15-->/root/vortex-android/app/src/main/AndroidManifest.xml:9:5-92
+16        android:name="android.hardware.vulkan.version"
+16-->/root/vortex-android/app/src/main/AndroidManifest.xml:9:19-65
+17        android:required="true" />
+17-->/root/vortex-android/app/src/main/AndroidManifest.xml:9:66-89
+18    <uses-feature
+18-->/root/vortex-android/app/src/main/AndroidManifest.xml:10:5-78
+19        android:glEsVersion="0x00030000"
+19-->/root/vortex-android/app/src/main/AndroidManifest.xml:10:19-51
+20        android:required="true" />
+20-->/root/vortex-android/app/src/main/AndroidManifest.xml:10:52-75
+21
+22    <application
+22-->/root/vortex-android/app/src/main/AndroidManifest.xml:12:5-39:19
+23        android:allowBackup="true"
+23-->/root/vortex-android/app/src/main/AndroidManifest.xml:13:9-35
+24        android:debuggable="true"
+25        android:extractNativeLibs="true"
+25-->/root/vortex-android/app/src/main/AndroidManifest.xml:20:9-41
+26        android:hasCode="true"
+26-->/root/vortex-android/app/src/main/AndroidManifest.xml:19:9-31
+27        android:icon="@mipmap/ic_launcher"
+27-->/root/vortex-android/app/src/main/AndroidManifest.xml:14:9-43
+28        android:label="@string/app_name"
+28-->/root/vortex-android/app/src/main/AndroidManifest.xml:15:9-41
+29        android:roundIcon="@mipmap/ic_launcher_round"
+29-->/root/vortex-android/app/src/main/AndroidManifest.xml:16:9-54
+30        android:supportsRtl="true"
+30-->/root/vortex-android/app/src/main/AndroidManifest.xml:17:9-35
+31        android:theme="@style/Theme.Vortex" >
+31-->/root/vortex-android/app/src/main/AndroidManifest.xml:18:9-44
+32        <activity
+32-->/root/vortex-android/app/src/main/AndroidManifest.xml:22:9-37:20
+33            android:name="com.playvortex.vortex.VortexNativeActivity"
+33-->/root/vortex-android/app/src/main/AndroidManifest.xml:23:13-49
+34            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|density"
+34-->/root/vortex-android/app/src/main/AndroidManifest.xml:25:13-95
+35            android:exported="true"
+35-->/root/vortex-android/app/src/main/AndroidManifest.xml:24:13-36
+36            android:hardwareAccelerated="true"
+36-->/root/vortex-android/app/src/main/AndroidManifest.xml:27:13-47
+37            android:screenOrientation="landscape" >
+37-->/root/vortex-android/app/src/main/AndroidManifest.xml:26:13-50
+38            <meta-data
+38-->/root/vortex-android/app/src/main/AndroidManifest.xml:29:13-31:49
+39                android:name="android.app.lib_name"
+39-->/root/vortex-android/app/src/main/AndroidManifest.xml:30:17-52
+40                android:value="vortex-native" />
+40-->/root/vortex-android/app/src/main/AndroidManifest.xml:31:17-46
+41
+42            <intent-filter>
+42-->/root/vortex-android/app/src/main/AndroidManifest.xml:33:13-36:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->/root/vortex-android/app/src/main/AndroidManifest.xml:34:17-69
+43-->/root/vortex-android/app/src/main/AndroidManifest.xml:34:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->/root/vortex-android/app/src/main/AndroidManifest.xml:35:17-77
+45-->/root/vortex-android/app/src/main/AndroidManifest.xml:35:27-74
+46            </intent-filter>
+47        </activity>
+48    </application>
+49
+50</manifest>

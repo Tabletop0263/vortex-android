@@ -1,0 +1,7 @@
+com.playvortex.vortex.app-pngs-0 /root/vortex-android/app/build/generated/res/pngs/debug
+com.playvortex.vortex.app-resValues-1 /root/vortex-android/app/build/generated/res/resValues/debug
+com.playvortex.vortex.app-packageDebugResources-2 /root/vortex-android/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.playvortex.vortex.app-packageDebugResources-3 /root/vortex-android/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.playvortex.vortex.app-debug-4 /root/vortex-android/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.playvortex.vortex.app-debug-5 /root/vortex-android/app/src/debug/res
+com.playvortex.vortex.app-main-6 /root/vortex-android/app/src/main/res

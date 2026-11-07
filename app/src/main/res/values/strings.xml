@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Vortex</string>
+    <string name="game_loading">Loading Vortex...</string>
+    <string name="connection_error">Connection error. Please check your internet connection.</string>
+    <string name="update_available">A new version is available.</string>
+</resources>

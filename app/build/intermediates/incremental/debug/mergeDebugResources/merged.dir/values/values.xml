@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="vortex_accent">#FFE94560</color>
+    <color name="vortex_bg">#FF1A1A2E</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Vortex</string>
+    <string name="connection_error">Connection error. Please check your internet connection.</string>
+    <string name="game_loading">Loading Vortex...</string>
+    <string name="update_available">A new version is available.</string>
+    <style name="Theme.Vortex" parent="android:Theme.Material.Light.NoActionBar.Fullscreen">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>
